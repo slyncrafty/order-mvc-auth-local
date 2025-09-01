@@ -35,7 +35,8 @@ npm start
 ## Lessons Learned:
 
 - Building a node app with some complex features
-- Passport Local strategy:
+- Passport used to maintain session information for authenticated users.
+- Passport Local strategy: using passport-local strategy for authenticating the users.
 
 ## Optimization
 
