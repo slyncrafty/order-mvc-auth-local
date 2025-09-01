@@ -1,0 +1,151 @@
+:root{
+  --primary: rgb(70, 135, 52);
+  --secondary: #a9806f;
+  --accent: #86a96f; 
+  --shadow: rgba(0,0,0,0.1); 
+}
+
+/* Reset default margin/padding */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #fde8d9;
+    padding: 2rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px var(--shadow); 
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+a {
+  display: inline-block;
+  margin: 0.5rem;
+  text-decoration: none;
+  color: var(--secondary);
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: var(--accent); 
+}
+
+ul {
+    list-style: none;
+}
+
+li.todoItem {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  background-color: #fff;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px var(--shadow);
+}
+
+li.todoItem input[type="checkbox"] {
+  margin-right: 1rem;
+  transform: scale(1.2);
+}
+
+span.completed {
+  text-decoration: line-through;
+  color: #888;
+}
+
+span.not {
+  color: #333;
+  text-decoration: underline;
+}
+
+span.priority {
+  background-color: rgb(251, 251, 162);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+}
+
+span.del, span.flag {
+  cursor: pointer;
+  margin-left: 0.75rem;
+  font-size: 1.1rem;
+}
+
+form {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 320px;
+  box-shadow: 0 4px 10px var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Inputs */
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="password"]:focus {
+  border-color: var(--accent); 
+  outline: none;
+}
+
+/* Submit button */
+form input[type="submit"] {
+  padding: 0.75rem;
+  background: var(--primary); 
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+form input[type="submit"]:hover {
+  background: var(--accent); 
+}
+
+
+h1 {
+    margin: 1.5rem 0;
+    color: var(--primary); ;
+}
+
+h2 {
+  margin: 1.5rem 0;
+  font-weight: normal;
+}

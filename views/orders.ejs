@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Globeton Coffee & Co</title>
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="container">
+
+        <h1>Orders</h1>
+        <ul>
+        <% ordersPriority.forEach( el => { %>
+                <li class='orderItem' data-id='<%=el._id%>'>
+                    <input type="checkbox" class="check" <%= el.completed ? "checked" : "" %> />
+                    <span class='<%= el.completed ? "completed" : "not" %> <%= el.priority ? "priority" : "" %>'>
+                    <%= el.order %> for <%= el.customerId %>
+                    </span>
+                    <span class='flag'> 📌 </span>
+                    <span class='del'> 🗑️ </span>
+                    <span class="barista"> ☕️ <%= el.barista %> </span>
+                </li>
+        <% }) %>    
+
+        <% orders.forEach( el => { %>
+                <li class='orderItem' data-id='<%=el._id%>'>
+                    <input type="checkbox" class="check" <%= el.completed ? "checked" : "" %> />
+                    <span class='<%= el.completed ? "completed" : "not" %> <%= el.priority ? "priority" : "" %>'>
+                    <%= el.order %> for <%= el.customerId %>
+                    </span>
+                    <span class='flag'> 📌 </span>
+                    <span class='del'> 🗑️ </span>
+                    <span class="barista"> ☕️ <%= el.barista %> </span>
+                </li>
+        <% }) %>    
+        </ul>
+
+        <h2><%= user.userName %> logged in - <%= left %> order(s) in the que.</h2>
+
+        <form action="/orders/createOrder" method='POST'>
+            <input type="text" placeholder="Enter a new order item" name='orderItem'>
+            <input type="text" placeholder="Enter customer name" name='orderCustomer'>
+            <input type="text" placeholder="Assign to" name='orderBarista'>
+            <input type="submit" value="Submit">
+        </form>
+
+        <a href="/logout">Logout</a>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>
